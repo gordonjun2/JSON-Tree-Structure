@@ -7,7 +7,7 @@ def generate_tree_structure(data, level=0, printed=[]):
             printed.append(list(data.keys()))
             for key, value in data.items():
                 print('\t' * level + str(key))
-                generate_tree_structure(value, level+1, printed)
+                generate_tree_structure(value, level+1, [])
     elif isinstance(data, list):
         duplicates_flag = False
         for item in data:
