@@ -4,20 +4,56 @@ Take in Python dictionary or JSON and then recursively traverse it to extract al
 ## Expected Output
 - Input:
 ```
-{"name": "John Smith", "age": 30, "address": {"city": "New York", "state": "NY"}, "phone_numbers": [{"type": "home", "number": "555-1234"}, {"type": "work", "number": "555-5678"}]}
+{
+  "name": "John Doe",
+  "age": 30,
+  "address": {
+    "street": "123 Main St",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "12345"
+  },
+  "phone_numbers": [
+    {
+      "type": "home",
+      "number": "555-1234"
+    },
+    {
+      "type": "work",
+      "number": "555-5678"
+    }
+  ],
+  "favorite_foods": [
+    {
+      "name": "Pizza",
+      "toppings": ["pepperoni", "mushrooms", "olives"]
+    },
+    {
+      "name": "Tacos",
+      "toppings": ["beef", "lettuce", "cheese", "sour cream"]
+    }
+  ]
+}
 ```
 - Output:
 ```
 name
 age
 address
-    city
-	  state
+        street
+        city
+        state
+        zip
 phone_numbers
-	  [List]
-		    type
-		    number
-	  ...
+        [List]
+                type
+                number
+        ...
+favorite_foods
+        [List]
+                name
+                toppings
+        ...
 
 ```
 
