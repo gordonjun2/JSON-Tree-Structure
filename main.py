@@ -1,5 +1,6 @@
 import ast
 import argparse
+import re
 
 def generate_tree_structure(data, level=0, printed=[]):
     if isinstance(data, dict):
@@ -38,6 +39,7 @@ filename = args.f
 with open(filename, 'r') as file:
     # Read the contents of the file as a string first
     dict_str = file.read()
+    dict_str = dict_str.replace("null", "''")
     data = ast.literal_eval(dict_str)
 
 # Generate tree structure of all keys
